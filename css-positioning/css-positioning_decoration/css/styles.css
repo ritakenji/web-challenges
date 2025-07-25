@@ -27,6 +27,12 @@ of them are visible and parts are covered by the card.
 Hint: The z-index can also be negative!
 */
 
+/* potential solution but adds unnecessary code
+main {
+  position: relative;
+}
+*/
+
 .hero-card {
   max-width: 550px;
   margin-inline: auto;
@@ -34,6 +40,12 @@ Hint: The z-index can also be negative!
   color: rgb(28, 33, 56);
   padding: 24px 32px;
   border-radius: 12px;
+  position: relative;
+  /*^^
+  I was writing z-index: 3; for hero card and z-index: 1 and 2 for the blobs and it wasn't working.  
+  When you apply z-index + position to an element, you create a new stacking context. Children with z-index: -1 can’t escape that context, so they can't visually go behind their parent anymore. Moving the blobs outside solves that but we don't wan't to create more code or change the html so we just remove the z index from the hero-card.
+  
+  */
 }
 
 .blob-1 {
@@ -42,6 +54,8 @@ Hint: The z-index can also be negative!
   background: linear-gradient(to bottom left, #f6997d, #ff4a11, #943215);
   border-radius: 16px;
   rotate: -15deg;
+  position: absolute;
+  z-index: -1;
 }
 
 .blob-2 {
@@ -56,4 +70,6 @@ Hint: The z-index can also be negative!
   );
   border-radius: 999px;
   rotate: 280deg;
+  position: absolute;
+  z-index: -1;
 }
