@@ -10,14 +10,15 @@
     <title>CSS Structure: BEM</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
+
   <body>
     <article class="info-card">
-      <h2>Learning BEM</h2>
+      <h2 class="info-card__title">Learning BEM</h2>
       <p>
         BEM stands for Block-Element-Modifier, which is a naming convention for
         css classes.
       </p>
-      <ul>
+      <ul class="info-card__list">
         <li>
           <span class="list-title">Block</span>: The name of a component, for
           example "card". It defines the scope of the classes and prevents
@@ -43,9 +44,9 @@
           different.
         </li>
       </ul>
-      <div class="buttons">
-        <button class="primary">I got it</button>
-        <button>I need more practice</button>
+      <div class="info-card__buttons">
+        <button class="info-card__buttons--primary">I got it</button>
+        <button class="info-card__button">I need more practice</button>
       </div>
     </article>
   </body>
