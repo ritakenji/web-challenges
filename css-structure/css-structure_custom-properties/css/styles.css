@@ -1,3 +1,9 @@
+:root {
+  --color-granite: #8336ff7b;
+  --color-nemo: #ff4a11;
+  --color-foam: #ffffff;
+}
+
 *,
 *::before,
 *::after {
@@ -11,13 +17,12 @@ body {
 }
 
 header {
-  background: rgb(131 54 255/ 45%);
-  
+  background: var(--color-granite); /* COLOR PURPLE*/
 }
 
 h1 {
   text-align: center;
-  color: white;
+  color: var(--color-foam); /* COLOR WHITE*/
   line-height: 1.4;
   margin: 0;
   letter-spacing: 0.025em;
@@ -30,7 +35,7 @@ h2 {
 }
 
 strong {
-  color: #ff4a11;
+  color: var(--color-nemo); /* COLOR RED*/
 }
 
 section {
@@ -58,12 +63,12 @@ figure {
   gap: 10px;
   margin: 0;
   padding: 10px;
-  background-color: #ff4a11ff;
+  background-color: var(--color-nemo); /* COLOR RED*/
   border-radius: 4px;
 }
 
 figcaption {
-  color: rgb(255 255 255);
+  color: var(--color-foam); /* COLOR WHITE*/
 }
 
 nav {
@@ -77,24 +82,24 @@ a {
   font-size: smaller;
   padding: 8px;
   border-radius: 4px;
-  background-color: hsl(14 100% 53%);
-  color: #fff;
+  background-color: var(--color-nemo); /* COLOR RED*/
+  color: var(--color-foam); /* COLOR WHITE*/
 }
 
 a:hover,
 a:focus-visible {
-  background-color: #8336ff7b;
+  background-color: var(--color-granite); /* COLOR PURPLE*/
   text-decoration: none;
 }
 
 mark {
-  background-color: rgb(255 74 17);
-  color: #ffffff;
+  background-color: var(--color-nemo); /* COLOR RED*/
+  color: var(--color-foam); /* COLOR WHITE*/
   border-radius: 4px;
   letter-spacing: 0.025em;
 }
 
 ::selection {
   background-color: #252629;
-  color: #ff4a11;
+  color: var(--color-nemo); /* COLOR RED*/
 }
