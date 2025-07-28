@@ -61,7 +61,7 @@ h1 {
 
 .box--one {
   background-color: lightblue;
-
+  width: 30%; /*used % for the relative to parent size*/
   width: 100px;
   height: 100px;
 }
@@ -93,4 +93,31 @@ h1 {
 
 .box--five img {
   width: 100%;
+}
+
+/*I want my width to change to 200px when the viewport is wider than 599px ... */
+@media screen and (min-width: 600px) {
+  .box--two {
+    width: 200px;
+  }
+}
+/*... and to 400px when the viewport is wider than 1199px.*/
+@media screen and (min-width: 1200px) {
+  .box--two {
+    width: 400px;
+  }
+}
+
+/*I want to be <strong>flat</strong> when viewed in landscape mode.*/
+@media screen and (orientation: landscape) {
+  .box--three {
+    height: 0px;
+  }
+}
+
+/*I want my background-color to change when dark mode is enabled.*/
+@media screen and (prefers-color-scheme: dark) {
+  .box--four {
+    background-color: crimson;
+  }
 }
