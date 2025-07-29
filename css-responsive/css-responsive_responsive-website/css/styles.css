@@ -240,10 +240,77 @@ CSS based on conditions such as viewport width, etc. */
 
 /* Media Query Tablet */
 /* --- */
-/* Replace this comment with your media query. */
+@media screen and (min-width: 820px) {
+  .card-section {
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    margin: 0 1rem 0 4rem; /*the spacing between articles really bothers me but don't know how to fix it :(( */
+  }
+}
 /* --- */
 
 /* Media Query Desktop */
 /* --- */
-/* Replace this comment with your media query. */
+@media screen and (min-width: 1200px) {
+  .--forest {
+    width: 100%;
+  }
+  .product-card {
+    flex-wrap: wrap;
+  }
+}
 /* --- */
+
+
+/* -------- SOLUTION FROM SPICED --------------
+
+@media screen and (min-width: 900px) {
+  .card-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    /* Adjustments to better match the expected design 
+    padding: 0 20px;
+    align-items: start;
+    gap: var(--gap) calc(var(--gap) * 2);
+    /* End of adjustments 
+
+    .product-card,
+    .intro-text {
+      width: 100%;
+    }
+  }
+}
+
+/* Media Query Desktop 
+@media screen and (min-width: 1200px) {
+  body,
+  .main-header,
+  .navbar {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card-section {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .product-card,
+  .intro-text {
+    grid-column: span 2;
+  }
+
+  .--forest {
+    grid-column: 1 / 5;
+    height: 400px;
+  }
+
+  .--desert {
+    grid-column: 2 / span 2;
+  }
+}
+
+/*
