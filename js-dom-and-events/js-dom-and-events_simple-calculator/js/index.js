@@ -95,7 +95,7 @@ const divideByTwoButton = document.querySelector('[data-js="divide-by-two"]');
 
 increaseByOneButton.addEventListener("click", () => {
   operand1++;
-  console.log(operand1); // I don't understand why operand1++ doesnt work
+  console.log(operand1);
 });
 
 increaseByFiveButton.addEventListener("click", () => {
@@ -105,7 +105,7 @@ increaseByFiveButton.addEventListener("click", () => {
 
 decreaseByOneButton.addEventListener("click", () => {
   operand1--;
-  console.log(operand1); // I don't understand why operand1-- doesnt work
+  console.log(operand1);
 });
 
 decreaseByFiveButton.addEventListener("click", () => {
