@@ -76,8 +76,6 @@ Step 2: Add event listeners to update `operand1` based on the button clicked. Lo
 
 // --v-- write your code here --v--
 
-//  -----------> IF THE EVENT HAPPENS TO THE NEWLY UPDATED operand1 <--------------
-
 const increaseByOneButton = document.querySelector(
   '[data-js="increase-by-one"]'
 );
@@ -96,7 +94,7 @@ const multiplyByTwoButton = document.querySelector(
 const divideByTwoButton = document.querySelector('[data-js="divide-by-two"]');
 
 increaseByOneButton.addEventListener("click", () => {
-  operand1 += 1;
+  operand1++;
   console.log(operand1); // I don't understand why operand1++ doesnt work
 });
 
@@ -106,7 +104,7 @@ increaseByFiveButton.addEventListener("click", () => {
 });
 
 decreaseByOneButton.addEventListener("click", () => {
-  operand1 -= 1;
+  operand1--;
   console.log(operand1); // I don't understand why operand1-- doesnt work
 });
 
@@ -126,49 +124,3 @@ divideByTwoButton.addEventListener("click", () => {
 });
 
 // --^-- write your code here --^--
-
-/*  -------------> IF THE EVENT HAPPENS ONLY TO THE ORIGINAL operand1 <---------------
-
-
-const increaseByOneButton = document.querySelector(
-  '[data-js="increase-by-one"]'
-);
-const increaseByFiveButton = document.querySelector(
-  '[data-js="increase-by-five"]'
-);
-const decreaseByOneButton = document.querySelector(
-  '[data-js="decrease-by-one"]'
-);
-const decreaseByFiveButton = document.querySelector(
-  '[data-js="decrease-by-five"]'
-);
-const multiplyByTwoButton = document.querySelector(
-  '[data-js="multiply-by-two"]'
-);
-const divideByTwoButton = document.querySelector('[data-js="divide-by-two"]');
-
-increaseByOneButton.addEventListener("click", () => {
-  console.log(operand1 + 1); // I don't understand why operand1++ doesnt work
-});
-
-increaseByFiveButton.addEventListener("click", () => {
-  console.log(operand1 + 5);
-});
-
-decreaseByOneButton.addEventListener("click", () => {
-  console.log(operand1 - 1); // I don't understand why operand1-- doesnt work
-});
-
-decreaseByFiveButton.addEventListener("click", () => {
-  console.log(operand1 - 5);
-});
-
-multiplyByTwoButton.addEventListener("click", () => {
-  console.log(operand1 * 2);
-});
-
-divideByTwoButton.addEventListener("click", () => {
-  console.log(operand1 / 2); 
-});
-// --^-- write your code here --^--
-*/
