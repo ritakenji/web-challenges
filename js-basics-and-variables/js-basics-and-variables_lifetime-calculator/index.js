@@ -39,5 +39,7 @@ let hoursLived =
   24; /* I initially calculated this, again over complicating things */
 console.log("Hours lived: " + hoursLived + " hours.");
 
-let daysAsleep = (daysLived * 8) / 24;
+let daysAsleep =
+  (daysLived * 8) /
+  24; /* can also be daysLived / 3, can also be (currentAge/3)* 365 */
 console.log("Cumulative days asleep: " + daysAsleep + " days.");
