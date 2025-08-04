@@ -34,7 +34,7 @@ let percentageLifeLived = (currentAge * 100) / 80;
 console.log("Percentage of life already lived: " + percentageLifeLived + "%");
 
 /*The cumulative number of days the person has spent sleeping, assuming an average of 8 hours of sleep per day.*/
-let hoursAsleep = daysLived * 24;
-console.log("Hours asleep: " + hoursAsleep + " hours.");
+let hoursLived = daysLived * 24;
+console.log("Hours lived: " + hoursLived + " hours.");
 
 let daysAsleep = 0;
