@@ -18,23 +18,26 @@ Hint: You can combine text and variables using the `+` operator.
 */
 
 const currentAge = Number(process.argv[2]); // This takes the `<age>` entered in the command `node index.js <age>`.
-console.log("Your current age is: " + currentAge);
+console.log("Your current age is: " + currentAge + " .");
 
 /*The total number of days the person has lived.*/
 let daysLived = currentAge * 365;
-console.log("Number of days lived so far: " + daysLived + " days");
+console.log("Number of days lived so far: " + daysLived + " days.");
 
 /*The estimated number of remaining days, assuming an average life span of 80 years.*/
 let daysEighty = 80 * 365;
 let daysLeft = daysEighty - daysLived;
-console.log("Number of days left: " + daysLeft + " days");
+console.log("Number of days left: " + daysLeft + " days.");
 
 /*The percentage of life already lived, in relation to the expected life span.*/
 let percentageLifeLived = (currentAge * 100) / 80;
-console.log("Percentage of life already lived: " + percentageLifeLived + "%");
+console.log("Percentage of life already lived: " + percentageLifeLived + "%.");
 
 /*The cumulative number of days the person has spent sleeping, assuming an average of 8 hours of sleep per day.*/
-let hoursLived = daysLived * 24;
+let hoursLived =
+  daysLived *
+  24; /* I initially calculated this, again over complicating things */
 console.log("Hours lived: " + hoursLived + " hours.");
 
-let daysAsleep = 0;
+let daysAsleep = (daysLived * 8) / 24;
+console.log("Cumulative days asleep: " + daysAsleep + " days.");
