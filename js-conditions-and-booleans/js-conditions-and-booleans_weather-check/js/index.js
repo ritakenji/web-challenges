@@ -24,3 +24,4 @@ switch (
 }
 
 // Adjust the "temperature" value to trigger different messages (for Part 2 only).
+//moved variable to the top
