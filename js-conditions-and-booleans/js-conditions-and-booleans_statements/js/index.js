@@ -49,13 +49,13 @@ if (justFive) {
 ////////////////////////////////////
 
 if (justFive) {
-  price = 2;
+  price = 2 * numberOfHotdogs;
 } else if (numberOfHotdogs == fiveToOneHundred) {
-  price = 1.5;
+  price = 1.5 * numberOfHotdogs;
 } else if (numberOfHotdogs == oneHundredToOneMil) {
-  price = 1;
+  price = 1 * numberOfHotdogs;
 } else if (numberOfHotdogs == oneMil) {
-  price = 0.1;
+  price = 0.1 * numberOfHotdogs;
 } else {
   price = 0;
 }
