@@ -14,7 +14,7 @@ console.log(message);
 const number = 6;
 let evenOrOdd = number % 2;
 
-if (evenOrOdd == 0) {
+if (evenOrOdd === 0) {
   /* 
     > Question: Why does Prettier correct it to double (()) when in other instances only one set of () is necessary?
     > Answer: Initially I wrote (evenOrOdd = 0) whis is incorrect because I am trying to compare values, not reassign:
@@ -50,11 +50,11 @@ if (justFive) {
 
 if (justFive) {
   price = 2 * numberOfHotdogs;
-} else if (numberOfHotdogs == fiveToOneHundred) {
+} else if (numberOfHotdogs === fiveToOneHundred) {
   price = 1.5 * numberOfHotdogs;
-} else if (numberOfHotdogs == oneHundredToOneMil) {
+} else if (numberOfHotdogs === oneHundredToOneMil) {
   price = 1 * numberOfHotdogs;
-} else if (numberOfHotdogs == oneMil) {
+} else if (numberOfHotdogs === oneMil) {
   price = 0.1 * numberOfHotdogs;
 } else {
   price = 0;
