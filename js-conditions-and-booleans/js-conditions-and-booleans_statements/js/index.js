@@ -68,7 +68,7 @@ if (justFive) {
 console.log("Price: ", price, "€"); */
 
 /* *********************************      HOW FLORIAN SUGGESTED:     ************************************************ */
-
+// I really do overcomplicate things. Lesson learned: no need to create a thousand variables, just calculate things directly on the statements!
 const numberOfHotdogs = 9;
 
 let totalPrice;
