@@ -6,10 +6,15 @@ console.clear();
    The formula is: square = number * number
 */
 
-function printSquare(number) {}
+function printSquare(number) {
+  return number * number;
+}
 
-printSquare(3);
-printSquare(5);
+let square = printSquare(3);
+console.log(square);
+
+square = printSquare(5);
+console.log(square);
 
 /*
 2: Write a function that accepts the radius of a circle as a parameter and logs
@@ -19,8 +24,12 @@ printSquare(5);
 
 // Uncomment the following function calls and implement the function `printCircumference`.
 
-// printCircumference(4);
-// printCircumference(6);
+printCircumference(4);
+printCircumference(6);
+
+function printCircumference(radius) {
+  console.log("Circumferance: ", 2 * Math.PI * radius);
+}
 
 /*
 3: Write a function that accepts the width and length of a rectangle
@@ -32,5 +41,9 @@ printSquare(5);
 
 // Uncomment the following function calls and implement the function `printRectangleArea`.
 
-// printRectangleArea(5, 7);
-// printRectangleArea(3, 4);
+printRectangleArea(5, 7);
+printRectangleArea(3, 4);
+
+function printRectangleArea(width, length) {
+  console.log("The area of the rectangle is: ", width * length);
+}
