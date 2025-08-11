@@ -80,7 +80,7 @@ if (numberOfHotdogs < 5) {
 } else if (numberOfHotdogs < 1000000) {
   totalPrice = numberOfHotdogs * 1;
 } else {
-  totalPrice = numberOfHotdogs * 0.1;
+  totalPrice = numberOfHotdogs * 0.1
 }
 
 const formattedPrice = totalPrice.toFixed(2); // toFixed(2): returns nr as a string with 2 decimal places. So 2.005.toFixed(2) would return "2.00".
