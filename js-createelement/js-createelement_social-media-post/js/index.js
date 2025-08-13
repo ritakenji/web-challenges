@@ -35,7 +35,9 @@ function newPost() {
   newFooter.append(newSpan, newLikeButton);
   newContainer.append(newParag, newFooter);
 
-  // theBody = document.getElementsByTagName("body"); ---> why doesnt this work
+  //const theBody = document.getElementsByTagName("body")[0];//body is an array, i didn't have the [0] before, thats why it wasnt showing
+  //console.log(theBody); //if i use this i see body is an array
+  //theBody.append(newContainer);
   document.body.append(newContainer);
 }
 
