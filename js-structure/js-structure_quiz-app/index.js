@@ -22,6 +22,8 @@ const cards = [
   },
 ];
 
+// -------------------------- HEADER --------------------------
+
 function Header() {
   const header = document.createElement("header");
   header.classList.add("header");
@@ -31,6 +33,8 @@ function Header() {
 
   return header;
 }
+
+// -------------------------- SUBMIT EVENT - NEW CARD --------------------------
 
 function handleFormSubmit(event) {
   event.preventDefault();
@@ -55,6 +59,9 @@ function handleFormSubmit(event) {
   event.target.reset();
   event.target.elements.question.focus();
 }
+
+// -------------------------- FORM --------------------------
+
 
 function Form() {
   const form = document.createElement("form");
@@ -105,6 +112,10 @@ function Form() {
   return form;
 }
 
+
+// -------------------------- BOOKMARKS --------------------------
+
+
 function Bookmark(props) {
   const bookmark = document.createElement("button");
   bookmark.classList.add("bookmark");
@@ -131,6 +142,11 @@ function Bookmark(props) {
 
   return bookmark;
 }
+
+
+// -------------------------- CARDS --------------------------
+
+
 
 function Card(props) {
   const card = document.createElement("article");
@@ -185,6 +201,10 @@ function Card(props) {
   return card;
 }
 
+
+// -------------------------- CARDLIST --------------------------
+
+
 function CardList() {
   const cardList = document.createElement("section");
   cardList.classList.add("card-list");
@@ -196,6 +216,9 @@ function CardList() {
 
   return cardList;
 }
+
+// -------------------------- APP --------------------------
+
 
 function App() {
   const app = document.createElement("main");
