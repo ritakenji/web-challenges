@@ -10,6 +10,11 @@ async function fetchUserData(url) {
       headers: { "x-api-key": "reqres-free-v1" },
     });
 
+    if (!response.ok) {
+      // I would have never gotten to this conclusion by myself if I hadn't looked at the solution from the coach
+      throw new Error(`Request failed with status ${response.status}`);
+    }
+
     return await response.json();
   } catch (error) {
     return { error: error.message };
