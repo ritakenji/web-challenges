@@ -9,7 +9,9 @@ async function fetchUserData(url) {
     const response = await fetch(url, {
       headers: { "x-api-key": "reqres-free-v1" },
     });
-
+    if (!response.ok) {
+      throw new Error ("HTTP Error Status is " + response.status);
+    }
     return await response.json();
   } catch (error) {
     return { error: error.message };
