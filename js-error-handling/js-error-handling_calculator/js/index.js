@@ -11,6 +11,9 @@ const operations = {
     if (b === 0) {
       throw new Error("Cannot divide by zero!"); //shows only on console, we need the error to be visible for the user
     }
+    /*     if (b === 2) {
+      throw new Error("Cannot divide by 2!");
+    } added this code to show that even with 2 errors, the catch will catch the error pertinente ao assunto*/
     return a / b;
   },
 };
