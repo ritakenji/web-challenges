@@ -1,7 +1,12 @@
 export default function App() {
-  return <Greet name={"Jordan"} />;
+  return (
+    <section>
+      <Greet name={"Gimena"} isCoach={true} />
+      <Greet name={"Bob"} />
+    </section>
+  );
 }
 
-function Greet(props) {
-  return <h1>Hello {props.name}</h1>;
+function Greet({ name, isCoach }) {
+  return <h1>Hello, {isCoach ? "Coach" : name}</h1>;
 }
