@@ -41,6 +41,19 @@ fetchDataAndRender();
 
 // --v-- your code below this line --v--
 
-function fetchDataAndRender() {
-  fetch(); // ?
+async function fetchDataAndRender() {
+  const url = "https://swapi.py4e.com/api/people";
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
 }
+
+const charactersObj = await fetchDataAndRender();
+console.log("charactersObj", charactersObj);
+
+// ************ TASK 2 **************
+
+charactersObj.results.forEach((element) => { //initially i didnt have '.results' because I forgot that foreach is for arrays and characterObj is an object (that contains arrays)
+  const newCard = Card(element);
+  renderElement(newCard);
+});
