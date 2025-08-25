@@ -1,3 +1,12 @@
 export default function App() {
-  return <h1>Replace me with your component!</h1>;
+  return (
+    <section>
+      <Greet name={"Gimena"} isCoach={true} />
+      <Greet name={"Bob"} />
+    </section>
+  );
+}
+
+function Greet({ name, isCoach }) {
+  return <h1>Hello, {isCoach ? "Coach" : name}</h1>;
 }
