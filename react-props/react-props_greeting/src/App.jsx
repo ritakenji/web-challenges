@@ -1,3 +1,7 @@
 export default function App() {
-  return <h1>Replace me with your component!</h1>;
+  return <Greet name={"Jordan"} />;
+}
+
+function Greet(props) {
+  return <h1>Hello {props.name}</h1>;
 }
