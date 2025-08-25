@@ -19,4 +19,28 @@ const colors = [
   "#A5A5A5",
 ];
 
-colors.forEach();
+/* -----------------------------------TASK 1 ------------------------------*/
+
+colors.forEach((color) => {
+  /*  const body = document.querySelector("body"); // i tried 'document.getElementsByTagName('body')' but forgot that i then need to specify [0]
+  const div = document.createElement("div");
+  div.classList.add("color-box");
+  div.style.backgroundColor = color; //first wrote setAttribute("background-color", color); but for styling we use styling
+  body.append(div); */
+});
+
+/* -----------------------------------TASK 2 ------------------------------*/
+
+function renderColorBox(param) {
+  //const body = document.querySelector("body"); -->  i tried 'document.getElementsByTagName('body')' but forgot that i then need to specify [0], then realized I could just do it directly (line 39)
+  const div = document.createElement("div");
+  div.classList.add("color-box");
+  div.style.backgroundColor = param; //first wrote setAttribute("background-color", color); but for styling we use styling
+  document.body.append(div);
+}
+
+colors.forEach((colorElement) => {
+  console.log("-----------------");
+  renderColorBox(colorElement);
+  console.log("The value: of each instance", colorElement);
+});
