@@ -14,7 +14,7 @@ async function fetchUserData(url) {
       // I would have never gotten to this conclusion by myself if I hadn't looked at the solution from the coach
       throw new Error(`Request failed with status ${response.status}`);
     }
-
+    
     return await response.json();
   } catch (error) {
     return { error: error.message };
