@@ -218,13 +218,23 @@ const wordsFind = [
 ];
 
 function doesWordExist(haystack, needle) {
-  // TODO: the find array method requires a callback function and returns true/false: the first element that satisfies the condition 
+  // TODO: the find array method requires a callback function and returns true/false: the first element that satisfies the condition
   /*
-  array.find( (element) => {...} );
+  const found = array.find( (element) => {...} );
+  1. create new variable to store found element
+  2. use find array method to find the element in the haystack arrray
+  3. compare element with needle
+  4. return found variable if element === needle
   */
 
-}
+  /* cant make this work ↓↓↓↓
+  const found = haystack.find((element) => {
+    element === needle;
+    return found;
+  }); */
 
+  return haystack.includes(needle);
+}
 // -------------------------------------------------------------------------------------------------
 
 // Count repetition
