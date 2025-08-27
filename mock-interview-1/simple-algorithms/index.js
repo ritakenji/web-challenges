@@ -312,6 +312,9 @@ function sum(array) {
   for (let i = 0; i < array.length; i++) {
     if (typeof array[i] === "string") {
       count += array[i].length;
+      /* } else if (typeof array[i] === "number") { 
+      count += array[i]; 
+       ↑ ↑ ↑ I believe here numbers turn into string due to string concatenation, so no need to keep these 2 lines of code*/
     } else if (typeof array[i] === "boolean") {
       if (array[i] === true) {
         count++;
@@ -322,7 +325,7 @@ function sum(array) {
   }
   return count;
 }
-console.log(sum(mixedArray)); //how is the value expected the sum of cracaters (48) and then the total of all values is 2089
+console.log(sum(mixedArray)); //how is the value expected on test the sum of cracaters (48) if the sum of all elements is smthing else entirely? is the test an additional thing being tested besides whats asked on instructions?
 // -------------------------------------------------------------------------------------------------
 
 // Bonus: Write a function that calculates the greatest product of four
