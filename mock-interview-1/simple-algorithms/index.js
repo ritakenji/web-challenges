@@ -235,6 +235,7 @@ function doesWordExist(haystack, needle) {
 
   return haystack.includes(needle);
 }
+console.log(doesWordExist(wordsFind, "truth"));
 // -------------------------------------------------------------------------------------------------
 
 // Count repetition
@@ -256,7 +257,22 @@ const wordsCount = [
 
 function howManyTimes(haystack, needle) {
   // TODO:
+  /*
+  1. create variable 'count' that will store repeated element
+  2. create loop that goes through array
+  3. if element === needle -> count++, otherwise ignore
+  4. return variable count
+  */
+
+  let count = 0;
+  haystack.forEach((element) => {
+    if (element === needle) {
+      count++;
+    }
+  });
+  return count;
 }
+console.log(howManyTimes(wordsCount, "matter"));
 
 // -------------------------------------------------------------------------------------------------
 
@@ -279,8 +295,34 @@ const mixedArray = [
 
 function sum(array) {
   // TODO:
-}
+  /*
+  create a variable to store all strings count countString
+  create a variable to store all booleans count countBoolean
+  create loop  to go through array
+  index elemts through array
+  compare elements: 
+    if element is a string -> count += element.length
+    if element is a number -> count += element
+    if element is true count++
+    if element is false count++???? ---------------> if false===0 why am i adding 0 as if its 1 to the sum? Am i simply counting nr of caracters?
+  retutn count
+  */
 
+  let count = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] === "string") {
+      count += array[i].length;
+    } else if (typeof array[i] === "boolean") {
+      if (array[i] === true) {
+        count++;
+      }
+    } else {
+      count += array[i];
+    }
+  }
+  return count;
+}
+console.log(sum(mixedArray)); //how is the value expected the sum of cracaters (48) and then the total of all values is 2089
 // -------------------------------------------------------------------------------------------------
 
 // Bonus: Write a function that calculates the greatest product of four
