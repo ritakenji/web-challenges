@@ -15,5 +15,17 @@
 }
 
 .card--yellow {
-  background-color: lightyellow;
+  background-color: #ffe9ad;
+}
+
+.card--orange {
+  background-color: #f9bd7c;
+}
+
+.card--purple {
+  background-color: #c8adff;
+}
+
+.card--blue {
+  background-color: lightblue;
 }

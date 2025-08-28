@@ -27,11 +27,37 @@ export default function App() {
       name: "🫐 Blueberry",
       color: "blue",
     },
+    {
+      id: 1342,
+      name: "🍋 Lemon",
+      color: "yellow",
+    },
+    {
+      id: 1343,
+      name: "🍉 Watermellon",
+      color: "red",
+    },
+    {
+      id: 1344,
+      name: "🍈 Melon",
+      color: "green",
+    },
+    {
+      id: 1345,
+      name: "🍇 Grape",
+      color: "purple",
+    },
   ];
 
   return (
     <div className="app">
-      <Card name="🍌 banana" />
+      <ul>
+        {fruits.map((fruit) => (
+          <li key={fruit.id}>
+            <Card id={fruit.id} name={fruit.name} color={fruit.color} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
