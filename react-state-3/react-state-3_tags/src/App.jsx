@@ -12,7 +12,7 @@ export default function App() {
   }
 
   function handleDeleteTag(tagToDelete) {
-    setTags(tags.filter((tag) => tag != tagToDelete));
+    setTags(tags.filter((tag) => tag !== tagToDelete));
   }
 
   return (
