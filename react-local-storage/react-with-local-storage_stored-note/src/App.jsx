@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useLocalStorageState from "use-local-storage-state";
 import FontSelector from "./components/FontSelector";
 import Note from "./components/Note";
