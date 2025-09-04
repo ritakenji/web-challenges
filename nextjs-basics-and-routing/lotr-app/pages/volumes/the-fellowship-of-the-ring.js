@@ -3,7 +3,6 @@ import Link from "next/link";
 import { volumes } from "@/lib/data";
 
 export default function TheFellowShipOfTheRing() {
-  console.log("the books: ", volumes[0].books);
   return (
     <>
       <Head>
@@ -22,7 +21,7 @@ export default function TheFellowShipOfTheRing() {
           </li>
         </ul>
         <button>
-          <Link href={`/volumes/the-two-towers`}>Next Volume</Link>
+          <Link href={`/volumes/the-two-towers`}>Next Volume →</Link>
         </button>
       </main>
     </>
