@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { volumes } from "@/lib/data";
 
 export default function TheReturnOfTheKing() {
@@ -20,6 +21,13 @@ export default function TheReturnOfTheKing() {
             {volumes[2].books[1].ordinal}: {volumes[2].books[1].title}
           </li>
         </ul>
+        <Image
+          src={"/images/the-return-of-the-king.png"}
+          alt={volumes[2].title}
+          width={140}
+          height={230}
+        />
+        <br />
         <button>
           <Link href={`/volumes/the-two-towers`}>← Previous Volume</Link>
         </button>

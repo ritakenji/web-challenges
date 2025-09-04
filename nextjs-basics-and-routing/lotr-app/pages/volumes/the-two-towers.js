@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { volumes } from "@/lib/data";
 
 export default function TheTwoTowers() {
@@ -20,6 +21,13 @@ export default function TheTwoTowers() {
             {volumes[1].books[1].ordinal}: {volumes[1].books[1].title}
           </li>
         </ul>
+        <Image
+          src={"/images/the-two-towers.png"}
+          alt={volumes[1].title}
+          width={140}
+          height={230}
+        />
+        <br />
         <button>
           <Link href={`/volumes/the-fellowship-of-the-ring`}>
             ← Previous Volume
