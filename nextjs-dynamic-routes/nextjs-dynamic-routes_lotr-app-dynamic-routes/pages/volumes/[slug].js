@@ -1,17 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
 import { volumes } from "../../lib/data.js";
+import { useRouter } from "next/router";
+
+/*  
+- dynamic routing  
+- /volumes/slug -> grab slug 
+- depending on the slug we want the info to display
+- find in volumes the data of the slug
+*/
 
 export default function VolumeDetail() {
-  const volumeIndex = volumes.findIndex(
-    (volume) => volume.slug === "the-two-towers"
-  );
+  //grab slug
+  const router = useRouter();
+  console.log("router: ", router);
+  const { slug } = router.query;
+  console.log("slug: ", slug);
+
+  // where to find the info -> in volumes
+  console.log("volumes", volumes);
+
+  //find info depening on the slug
+  const volumeIndex = volumes.findIndex((volume) => volume.slug === slug);
 
   const volume = volumes[volumeIndex];
   const nextVolume = volumes[volumeIndex + 1];
   const previousVolume = volumes[volumeIndex - 1];
 
-  if (!volume) {
+  if (volumeIndex < 0) {
     return null;
   }
 
@@ -35,20 +51,20 @@ export default function VolumeDetail() {
         width={140}
         height={230}
       />
-      <div>
-        {previousVolume ? (
+      {previousVolume ? (
+        <div>
           <Link href={`/volumes/${previousVolume.slug}`}>
             ← Previous Volume: {previousVolume.title}
           </Link>
-        ) : null}
-      </div>
-      <div>
-        {nextVolume ? (
+        </div>
+      ) : null}
+      {nextVolume ? (
+        <div>
           <Link href={`/volumes/${nextVolume.slug}`}>
             Next Volume: {nextVolume.title} →
           </Link>
-        ) : null}
-      </div>
+        </div>
+      ) : null}
     </>
   );
 }
