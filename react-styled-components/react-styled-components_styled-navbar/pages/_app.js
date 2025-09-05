@@ -20,13 +20,13 @@ export default function App({ Component, pageProps }) {
       <StyledNav>
         <StyledList>
           <li>
-            <Link href="/">Home</Link>
+            <ListLink href="/">Home</ListLink>
           </li>
           <li>
-            <Link href="/about">About</Link>
+            <ListLink href="/about">About</ListLink>
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <ListLink href="/contact">Contact</ListLink>
           </li>
         </StyledList>
       </StyledNav>
@@ -34,3 +34,10 @@ export default function App({ Component, pageProps }) {
     </>
   );
 }
+
+const ListLink = styled(Link)`
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
