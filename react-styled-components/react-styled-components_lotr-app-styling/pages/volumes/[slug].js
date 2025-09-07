@@ -58,10 +58,6 @@ export default function VolumeDetail() {
   /* ↑↑↑↑ so i dont have to write volume.title, volume.description, etc */
   /*  console.log("volume: ", volume); */
 
-  function handlePrevious() {
-    router.push(`/volumes/${prevVol.slug}`);
-  }
-
   return (
     <>
       <Head>
@@ -83,10 +79,10 @@ export default function VolumeDetail() {
         <CenterSection $bgColor1={color} $bgColor2={gradientColor}>
           <List>
             {books.map(({ ordinal, title }) => (
-              <li key={title}>
+              <ListEle key={title}>
                 <Ordinal>{ordinal}</Ordinal>
                 <BookTitle>{title}</BookTitle>
-              </li>
+              </ListEle>
             ))}
           </List>
           <Image
@@ -103,11 +99,20 @@ export default function VolumeDetail() {
         {/* if volumeIndex is 0 aka false then... */}
 
         {!!volumeIndex && (
-          <button onClick={handlePrevious}>
-            {" "}
-            ← Previous Volume: {prevVol.title}
-          </button>
+          <PrevLink href={`/volumes/${prevVol.slug}`}>
+            <Image
+              src={"/images/icons/arrow-left.svg"}
+              alt={`Previous volume`}
+              width={25}
+              height={25}
+            />
+            <div>
+              <TextPrevVol>Previous Volume</TextPrevVol>
+              <TextPrevVolTitle>{prevVol.title}</TextPrevVolTitle>
+            </div>
+          </PrevLink>
         )}
+
         {!!nextIndex && (
           <NextLink href={`/volumes/${nextVol.slug}`}>
             <div>
@@ -128,7 +133,7 @@ export default function VolumeDetail() {
 }
 
 const Main = styled.main`
-  margin: 40px 20px 30px 20px;
+  margin: 60px 20px 30px 20px;
 `;
 
 const LinkAllVol = styled(Link)`
@@ -143,32 +148,71 @@ const LinkAllVol = styled(Link)`
 
 const Title = styled.h1`
   font-size: 3rem;
+  margin-bottom: 15px;
 `;
 
 const CenterSection = styled.section`
   display: flex;
-  justify-content: space-evenly;
-  padding: 20px 0px;
-  margin-left: -30px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  margin: 25px 0 -5px -28px;
   width: 100vw;
-  /* background-color: ${(props) => props.$bgColor1}; */
   color: var(--color-clouds);
-  /* background: linear-gradient(145deg, #532724 50%, #855956 100%); */
-  background: linear-gradient(145deg, ${(props) => props.$bgColor1} 50%, ${(props) => props.$bgColor2} 100%);
-
-/* background: #532724;
-background: linear-gradient(145deg, rgba(83, 39, 36, 1) 50%, rgba(120, 90, 87, 1) 100%); */
-
+  background: linear-gradient(
+    145deg,
+    ${(props) => props.$bgColor1} 50%,
+    ${(props) => props.$bgColor2} 100%
+  );
 `;
 
 const List = styled.ul`
   list-style-type: none;
   padding: 0;
+  margin: 0;
 `;
 
-const Ordinal = styled.p``;
+const ListEle = styled.li`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+`;
 
-const BookTitle = styled.p``;
+const Ordinal = styled.p`
+  margin-bottom: 0;
+  margin-top: 10;
+  font-style: italic;
+  font-size: 12px;
+`;
+
+const BookTitle = styled.p`
+  margin-top: 0;
+  font-weight: 500;
+`;
+
+const PrevLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 5px;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: inherit;
+`;
+
+const TextPrevVol = styled.p`
+  margin-bottom: 0;
+  margin-right: 5px;
+  font-size: 13px;
+  font-style: italic;
+`;
+
+const TextPrevVolTitle = styled.p`
+  margin-top: 0;
+  margin-right: 5px;
+  font-size: 13px;
+  font-weight: 500;
+`;
 
 const NextLink = styled(Link)`
   display: flex;
