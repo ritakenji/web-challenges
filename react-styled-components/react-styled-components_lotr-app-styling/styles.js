@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { Lora } from "next/font/google";
 
-const lora = Lora({
+export const lora = Lora({
   subsets: ["latin"],
   style: ["normal", "italic"],
 });

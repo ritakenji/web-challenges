@@ -153,8 +153,9 @@ const Title = styled.h1`
 
 const CenterSection = styled.section`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  gap: 15%;
   padding: 30px;
   margin: 25px 0 -5px -28px;
   width: 100vw;
