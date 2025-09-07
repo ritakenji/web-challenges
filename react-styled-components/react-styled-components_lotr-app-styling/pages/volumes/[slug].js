@@ -54,7 +54,7 @@ export default function VolumeDetail() {
 
   const nextVol = volumes[nextIndex];
   const prevVol = volumes[prevIndex];
-  const { title, description, cover, books, color } = volume;
+  const { title, description, cover, books, color, gradientColor } = volume;
   /* ↑↑↑↑ so i dont have to write volume.title, volume.description, etc */
   /*  console.log("volume: ", volume); */
 
@@ -80,7 +80,7 @@ export default function VolumeDetail() {
         <Title>{title}</Title>
         <p>{description}</p>
 
-        <CenterSection $bgColor={color}>
+        <CenterSection $bgColor1={color} $bgColor2={gradientColor}>
           <List>
             {books.map(({ ordinal, title }) => (
               <li key={title}>
@@ -151,8 +151,14 @@ const CenterSection = styled.section`
   padding: 20px 0px;
   margin-left: -30px;
   width: 100vw;
-  background-color: ${(props) => props.$bgColor};
+  /* background-color: ${(props) => props.$bgColor1}; */
   color: var(--color-clouds);
+  /* background: linear-gradient(145deg, #532724 50%, #855956 100%); */
+  background: linear-gradient(145deg, ${(props) => props.$bgColor1} 50%, ${(props) => props.$bgColor2} 100%);
+
+/* background: #532724;
+background: linear-gradient(145deg, rgba(83, 39, 36, 1) 50%, rgba(120, 90, 87, 1) 100%); */
+
 `;
 
 const List = styled.ul`

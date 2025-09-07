@@ -16,6 +16,7 @@ export const volumes = [
       },
     ],
     color: "#242C31",
+    gradientColor: "#5d666aff",
   },
   {
     slug: "the-two-towers",
@@ -33,7 +34,8 @@ export const volumes = [
         title: "The Ring Goes East",
       },
     ],
-    color: "#532724",
+    color: "#532724ff",
+    gradientColor: "#7c615fff",
   },
   {
     slug: "the-return-of-the-king",
@@ -52,6 +54,7 @@ export const volumes = [
       },
     ],
     color: "#202C2C",
+    gradientColor: "#636f6fff",
   },
 ];
 
