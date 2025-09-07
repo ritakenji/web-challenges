@@ -1,9 +1,10 @@
 import "./StatusCheck.css";
+import { useState } from "react";
 
 const apiStatusUrl = "https://example-apis.vercel.app/api/status";
 
 export default function StatusCheck() {
-  const statusIcon = "⁉️";
+  const [statusIcon, setStatusIcon] = useState("⁉️");
   // Something needs to change here…
   // ↙️
   function handleCheckApiStatus() {
@@ -20,6 +21,30 @@ export default function StatusCheck() {
      * is okay and false if it is not.
      **/
     // --v-- write your code here --v--
+    setStatusIcon("⏳"); // setting statusIcon
+    async function startFetching() {
+      try {
+        const response = await fetch(apiStatusUrl);
+        const data = await response.json();
+
+        if (response.ok) {
+          setStatusIcon("✅");
+        } else {
+          setStatusIcon("❌");
+          /* throw new Error(
+            `HTTP response status code number: ${response.status}, ${data.status}`
+          ); */
+        }
+      } catch (error) {
+        setStatusIcon("🚨");
+      }
+    }
+    startFetching();
+
+    /*  if (!data) { <-- also wrote [data, setData] = useState(); at start of StatusCheck() function
+      return setStatusIcon("⏳"); <--- this would only work after the mount but never on a re-render
+    } */
+
     // --^-- write your code here --^--
   }
 
