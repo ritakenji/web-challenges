@@ -3,6 +3,7 @@ import Image from "next/image";
 import Head from "next/head";
 import { volumes } from "@/lib/data";
 import { useRouter } from "next/router";
+import styled from "styled-components";
 
 /* ToDO - dynamic routing
         1. grab the slug using useRoute 
@@ -53,7 +54,7 @@ export default function VolumeDetail() {
 
   const nextVol = volumes[nextIndex];
   const prevVol = volumes[prevIndex];
-  const { title, description, cover, books } = volume;
+  const { title, description, cover, books, color } = volume;
   /* ↑↑↑↑ so i dont have to write volume.title, volume.description, etc */
   /*  console.log("volume: ", volume); */
 
@@ -66,23 +67,35 @@ export default function VolumeDetail() {
       <Head>
         <title>{title}</title>
       </Head>
-      <main>
-        <Link href={`/volumes`}>← All Volumes</Link>
-        <h1>{title}</h1>
+      <Main>
+        <LinkAllVol href={`/volumes`}>
+          <Image
+            src={"/images/icons/chevron-left.svg"}
+            alt={`Go back to all volumes`}
+            width={25}
+            height={25}
+          />
+          All Volumes
+        </LinkAllVol>
+        <Title>{title}</Title>
         <p>{description}</p>
-        <ul>
-          {books.map(({ ordinal, title }) => (
-            <li key={title}>
-              {ordinal}: <strong>{title}</strong>
-            </li>
-          ))}
-        </ul>
-        <Image
-          src={cover}
-          alt={`Cover image of ${title}`}
-          width={140}
-          height={230}
-        />
+
+        <CenterSection $bgColor={color}>
+          <List>
+            {books.map(({ ordinal, title }) => (
+              <li key={title}>
+                <Ordinal>{ordinal}</Ordinal>
+                <BookTitle>{title}</BookTitle>
+              </li>
+            ))}
+          </List>
+          <Image
+            src={cover}
+            alt={`Cover image of ${title}`}
+            width={140}
+            height={230}
+          />
+        </CenterSection>
 
         <br />
 
@@ -96,11 +109,81 @@ export default function VolumeDetail() {
           </button>
         )}
         {!!nextIndex && (
-          <Link href={`/volumes/${nextVol.slug}`}>
-            Next Volume: {nextVol.title} →
-          </Link>
+          <NextLink href={`/volumes/${nextVol.slug}`}>
+            <div>
+              <TextNextVol>Next Volume</TextNextVol>
+              <TextNextVolTitle>{nextVol.title}</TextNextVolTitle>
+            </div>
+            <Image
+              src={"/images/icons/arrow-right.svg"}
+              alt={`Next volume`}
+              width={25}
+              height={25}
+            />
+          </NextLink>
         )}
-      </main>
+      </Main>
     </>
   );
 }
+
+const Main = styled.main`
+  margin: 40px 20px 30px 20px;
+`;
+
+const LinkAllVol = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 300;
+  font-size: 15px;
+`;
+
+const Title = styled.h1`
+  font-size: 3rem;
+`;
+
+const CenterSection = styled.section`
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0px;
+  margin-left: -30px;
+  width: 100vw;
+  background-color: ${(props) => props.$bgColor};
+  color: var(--color-clouds);
+`;
+
+const List = styled.ul`
+  list-style-type: none;
+  padding: 0;
+`;
+
+const Ordinal = styled.p``;
+
+const BookTitle = styled.p``;
+
+const NextLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-align: right;
+  gap: 5px;
+  justify-content: flex-end;
+  text-decoration: none;
+  color: inherit;
+`;
+
+const TextNextVol = styled.p`
+  margin-bottom: 0;
+  margin-right: 5px;
+  font-size: 13px;
+  font-style: italic;
+`;
+
+const TextNextVolTitle = styled.p`
+  margin-top: 0;
+  margin-right: 5px;
+  font-size: 13px;
+  font-weight: 500;
+`;
