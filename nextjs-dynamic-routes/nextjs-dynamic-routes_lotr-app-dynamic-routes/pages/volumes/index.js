@@ -1,26 +1,37 @@
-import Link from "next/link";
-import { introduction } from "../../lib/data";
+index;
 
-export default function Volumes() {
+/* 
+
+!!! CONTINUATION OF PREVIOUS LOTR'S CHALLENGE (NEXTJS-BASICS-AND-ROUTING), CODE BELOW WRITTEN BY ME !!!
+
+*/
+
+import Head from "next/head";
+import Link from "next/link";
+import { introduction } from "@/lib/data";
+import { volumes } from "@/lib/data";
+
+export default function HomePage() {
   return (
     <>
-      <h1>The Lord of the Rings</h1>
-      <p>{introduction}</p>
-      <ul>
-        <li>
-          <Link href="/volumes/the-fellowship-of-the-ring">
-            The Fellowship of the Ring
-          </Link>
-        </li>
-        <li>
-          <Link href="/volumes/the-two-towers">The Two Towers</Link>
-        </li>
-        <li>
-          <Link href="/volumes/the-return-of-the-king">
-            The Return of the King
-          </Link>
-        </li>
-      </ul>
+      <Head>
+        <title>LOTR</title>
+      </Head>
+      <main>
+        <h1>The Lord of The Rings</h1>
+        <p>{introduction}</p>
+
+        <h2>All Volumes</h2>
+        <ul>
+          {volumes.map((volume, index) => (
+            <li key={index}>
+              <Link href={`/volumes/${volume.slug.toLocaleLowerCase()}`}>
+                {volume.title}
+              </Link>{" "}
+            </li>
+          ))}
+        </ul>
+      </main>
     </>
   );
 }
