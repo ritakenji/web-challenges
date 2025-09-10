@@ -1,8 +1,6 @@
 import { LightButton, Icon, Text, Name, State } from "./Light.styled";
 
-
 export default function Light({ light, handleToggle }) {
-
   return (
     <LightButton
       type="button"

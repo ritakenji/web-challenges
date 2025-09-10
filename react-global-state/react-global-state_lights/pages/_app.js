@@ -18,16 +18,31 @@ export default function App({ Component, pageProps }) {
 
   function handleToggle(toggleId) {
     setLights(
-      lights.map((light) =>
-        light.id === toggleId ? { ...light, isOn: !light.isOn } : light //light.id === toggleId ? { ...light, isOn: true ? false : true } : light
+      lights.map(
+        (light) =>
+          light.id === toggleId ? { ...light, isOn: !light.isOn } : light //light.id === toggleId ? { ...light, isOn: true ? false : true } : light
       )
     );
+  }
+
+  function handleTurnOff() {
+    setLights(lights.map((light) => ({ ...light, isOn: false })));
+  }
+
+  function handleTurnOn() {
+    setLights(lights.map((light) => ({ ...light, isOn: true })));
   }
 
   return (
     <Layout>
       <GlobalStyle />
-      <Component {...pageProps} lights={lights} handleToggle={handleToggle}/>
+      <Component
+        {...pageProps}
+        lights={lights}
+        handleToggle={handleToggle}
+        handleTurnOff={handleTurnOff}
+        handleTurnOn={handleTurnOn}
+      />
     </Layout>
   );
 }
