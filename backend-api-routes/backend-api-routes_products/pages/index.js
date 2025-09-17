@@ -1,8 +1,7 @@
 import useSWR from "swr";
 
 export default function HomePage() {
-  const url = "/api/products/";
-  const { data, isLoading } = useSWR(url);
+  const { data, isLoading } = useSWR(id ? `/api/products/${id}` : null);
 
   if (isLoading) {
     return <h1>Loading...</h1>;
