@@ -1,7 +1,25 @@
+import useSWR from "swr";
+
 export default function HomePage() {
+  const { data, isLoading } = useSWR(id ? `/api/products/${id}` : null);
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+  if (!data) {
+    return null;
+  }
+
+  console.log("data: ", data);
   return (
-    <div>
-      <h1>Welcome to Next.js API Routes!</h1>
-    </div>
+    <ul>
+      {data.map((product) => {
+        return (
+          <li key={product.id}>
+            <h1>{product.name}</h1>
+          </li>
+        );
+      })}
+    </ul>
   );
 }
